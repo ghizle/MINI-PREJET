@@ -1,0 +1,42 @@
+<div class="container"> 
+    <div>
+     <h2>Ajouter coffee :</h2> 
+    </div>
+    <form > 
+        <div class="col-sm-2 col-md-2 col-lg-2"> 
+        <label >ID coffee</label> 
+        <input type="text" [(ngModel)]="newcoffee.idcoffee" 
+        name="idcoffee" class="form-control"> 
+        </div> 
+        <div class="col-sm-4 col-md-4 col-lg-4" > 
+        <label >Nom coffee</label> 
+        <input type="text"[(ngModel)]= "newcoffee.nomcoffee" 
+        name="nomcoffee" class="form-control"> 
+        </div> 
+        <div class="col-sm-2 col-md-2 col-lg-2"> 
+        <label >Prix Cofee</label> 
+        <input type="number" [(ngModel)]= "newcoffee.prixcoffee" 
+        name="prixcoffee" class="form-control"> 
+        </div> 
+        <div class="col-sm-4 col-md-4 col-lg-4"> 
+        <label >Date création</label> 
+        <input type="date" [(ngModel)]= "newcoffee.dateCreation" 
+        name="dateCreation" class="form-control"> 
+        </div> 
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Marque</label>
+        <select class="form-control form-control-lg" id="idMar" name="idMar" [(ngModel)]="newIdMar">
+            <option *ngFor="let mar of marques" [value]="mar.idMar">
+                {{mar.nomMar}}
+            </option>
+        </select>
+    </div>
+        <div class="mt-2"> 
+        <button type="submit" (click)="addcoffee()"class="btn btn-success">Ajouter</button> 
+        <div>
+             <h3>{{message}}</h3>
+        </div>
+        </div> 
+        </form> 
+        </div>
+        
